@@ -1,4 +1,4 @@
-const tableHead = "<tr><th>Name</th><th>Time</th><th>Group Size</th></tr>"
+const TABLE_HEAD = "<tr><th>Name</th><th>Time</th><th>Group Size</th></tr>"
 const API_ADD = "/api/add-reservation";
 const API_GET = "/api/get-reservations";
 
@@ -16,7 +16,7 @@ function drawRow(reservation) {
 }
 
 function drawTable(reservations) {
-    let t = tableHead;
+    let t = TABLE_HEAD;
 
     if (reservations.length == 0)
         t += drawRow(null);
