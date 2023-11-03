@@ -18,6 +18,7 @@ public class RestaurantManager {
     public synchronized Reservation[] getReservations() {
         Reservation[] copy = new Reservation[reservations.size()];
 
+        // Copy Reservation objects to avoid unwanted modification
         for (int i = 0; i < reservations.size(); i++)
             copy[i] = reservations.get(i);
 

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RestaurantautomationApplication {
 	public static void main(String[] args) {
-		// Initialize singleton
+		// Initialize singleton before starting the REST application
 		RestaurantManager.getInstance();
 		
 		SpringApplication.run(RestaurantautomationApplication.class, args);
