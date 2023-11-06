@@ -3,7 +3,7 @@
 ## Installing Apache Server
 ### Windows
 1. Download from https://www.apachehaus.com/cgi-bin/download.plx
-2. Place somewhere on your pc (Directly in C:/ is probably best)
+2. Extract somewhere on your pc (Directly in C:/ is probably best)
 3. Edit ```conf/httpd.conf``` file in your apache install (not the one in this project) and change the path in ```Define SRVROOT "..."``` to where you installed apache
    
 ## Running the Apache Server
