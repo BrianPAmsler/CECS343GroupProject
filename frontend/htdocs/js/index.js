@@ -1,4 +1,4 @@
-const TABLE_HEAD = '<tr><th style="width:50%">Name</th><th style="width:25%">Time</th><th style="width:25%">Group Size</th></tr>'
+const TABLE_HEAD = '<tr><th style="width:33%">Name</th><th style="width:34%">Time</th><th style="width:33%">Group Size</th></tr>'
 
 // API calls
 const API_ADD = "/api/add-reservation";
