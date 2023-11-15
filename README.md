@@ -4,7 +4,7 @@
 ### Windows
 1. Download from https://www.apachelounge.com/download/
 2. Extract somewhere on your pc (Directly in C:/ is probably best)
-3. Add the Apache24 folder to your PATH variable.
+3. Add the ```Apache24/bin``` directory to your PATH variable.
 4. Edit ```conf/httpd.conf``` file in your apache install (not the one in this project) and change the path in ```Define SRVROOT "..."``` to where you installed apache
    
 ## Running the Apache Server
