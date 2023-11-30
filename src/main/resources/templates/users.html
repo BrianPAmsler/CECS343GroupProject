@@ -21,12 +21,12 @@
             </tr>
             
             <tr th:each="user, itemStat : *{users}" >
-                <td><div th:text="${user.getId()}"></div></td>
-                <td><div th:text="${user.getFirstName()}"></div></td>
-                <td><div th:text="${user.getLastName()}"></div></td>
-                <td><div th:text="${user.getPhoneNumber()}"></div></td>
+                <td id="id-text" th:text="${user.getId()}"></td>
+                <td th:text="${user.getFirstName()}"></td>
+                <td th:text="${user.getLastName()}"></td>
+                <td th:text="${user.getPhoneNumber()}"></td>
                 <td>
-                    <select class="form-control" th:field="*{users[__${itemStat.index}__].role}"  id="dropOperator">
+                    <select class="form-control change-listener"  th:field="*{users[__${itemStat.index}__].role}" th:name="*{users[__${itemStat.index}__].id}" id="dropOperator">
                     <option th:each="role : ${roles}" th:value="${role.toString()}" th:text="${role.toString()}"></option>
                     </select>
                 </td>
@@ -34,7 +34,7 @@
         </table>
         <br>
         <div style="display: flex; justify-content: center; width: 100%;">
-            <input type="submit" value="Update">
+            <input type="submit" value="Update" id="update-button" disabled>
         </div>
     </form>
 </body>
