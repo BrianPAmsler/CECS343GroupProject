@@ -26,7 +26,7 @@
                 <td th:text="${user.getLastName()}"></td>
                 <td th:text="${user.getPhoneNumber()}"></td>
                 <td>
-                    <select class="form-control change-listener"  th:field="*{users[__${itemStat.index}__].role}" th:name="*{users[__${itemStat.index}__].id}" id="dropOperator">
+                    <select class="form-control"  th:field="*{users[__${itemStat.index}__].role}" th:name="*{users[__${itemStat.index}__].id}" id="dropOperator">
                     <option th:each="role : ${roles}" th:value="${role.toString()}" th:text="${role.toString()}"></option>
                     </select>
                 </td>
