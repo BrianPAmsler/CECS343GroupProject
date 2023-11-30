@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import spring.io.restaurantmanagement.user.Role;
 import spring.io.restaurantmanagement.user.User;
 import spring.io.restaurantmanagement.user.UserRepository;
 
@@ -56,7 +58,7 @@ public class CommonController {
             return "/signup";
         }
         
-        User user = new User(emailAddress, passwordEncoder.encode(password), firstName, lastName, phoneNumber, new ArrayList<>(), "ROLE_USER");
+        User user = new User(emailAddress, passwordEncoder.encode(password), firstName, lastName, phoneNumber, new ArrayList<>(), Role.ROLE_USER);
         userRepository.save(user);
         model.addAttribute("signUpSuccess", true);
         return "signin";

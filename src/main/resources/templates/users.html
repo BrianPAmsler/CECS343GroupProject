@@ -9,20 +9,33 @@
 </head>
 <body>
   <div th:insert="nav.html"></div>
-    <table class="table table-hover">
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone Number</th>
-        </tr>
-        
-        <tr th:each="user : ${users}" >
-            <td th:text="${user.getId()}"></td>
-            <td th:text="${user.getFirstName()}"></td>
-            <td th:text="${user.getLastName()}"></td>
-            <td th:text="${user.getPhoneNumber()}"></td>
-        </tr>
-    </table>
+  
+    <form th:action="@{/users}" th:object="${usersWrapper}" method="post">
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+            </tr>
+            
+            <tr th:each="user, itemStat : *{users}" >
+                <td><div th:text="${user.getId()}"></div></td>
+                <td><div th:text="${user.getFirstName()}"></div></td>
+                <td><div th:text="${user.getLastName()}"></div></td>
+                <td><div th:text="${user.getPhoneNumber()}"></div></td>
+                <td>
+                    <select class="form-control" th:field="*{users[__${itemStat.index}__].role}"  id="dropOperator">
+                    <option th:each="role : ${roles}" th:value="${role.toString()}" th:text="${role.toString()}"></option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <input type="submit" value="Update">
+        </div>
+    </form>
 </body>
 </html>

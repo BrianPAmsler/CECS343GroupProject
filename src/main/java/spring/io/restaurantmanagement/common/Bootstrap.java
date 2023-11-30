@@ -13,6 +13,7 @@ import spring.io.restaurantmanagement.payment.Payment;
 import spring.io.restaurantmanagement.payment.PaymentRepository;
 import spring.io.restaurantmanagement.reservation.Reservation;
 import spring.io.restaurantmanagement.reservation.ReservationRepository;
+import spring.io.restaurantmanagement.user.Role;
 import spring.io.restaurantmanagement.user.User;
 import spring.io.restaurantmanagement.user.UserRepository;
 
@@ -37,15 +38,15 @@ public class Bootstrap implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<User> userList = new ArrayList<>();
-        User adminUser = new User("admin@email.com", passwordEncoder.encode("123456"), "Admin", "User", "", new ArrayList<>(), "ROLE_ADMIN");
-        User user = new User("a@email.com", passwordEncoder.encode("123456"), "a", "b", "123456", new ArrayList<>(), "ROLE_USER");
+        User adminUser = new User("admin@email.com", passwordEncoder.encode("123456"), "Admin", "User", "", new ArrayList<>(), Role.ROLE_ADMIN);
+        User user = new User("a@email.com", passwordEncoder.encode("123456"), "a", "b", "123456", new ArrayList<>(), Role.ROLE_USER);
         
-        User user1 = new User("an1lee1@email.com", passwordEncoder.encode("123456"), "An", "Lee1", "123-456", new ArrayList<>(), "ROLE_USER");
-        User user2 = new User("an2lee2@email.com", passwordEncoder.encode("123456"),"Bn", "Lee2", "456-234", new ArrayList<>(), "ROLE_USER");
-        User user3 = new User("an3lee3@email.com", passwordEncoder.encode("123456"),"Cn", "Lee3", "678-890", new ArrayList<>(), "ROLE_USER");
-        User user4 = new User("an4lee4@email.com", passwordEncoder.encode("123456"),"Dn", "Lee4", "345-567", new ArrayList<>(), "ROLE_USER");
-        User user5 = new User("an5lee5@email.com", passwordEncoder.encode("123456"),"En", "Lee5", "234-890", new ArrayList<>(), "ROLE_USER");
-        User user6 = new User("an6lee6@email.com", passwordEncoder.encode("123456"),"Fn", "Lee6", "764-678", new ArrayList<>(), "ROLE_USER");
+        User user1 = new User("an1lee1@email.com", passwordEncoder.encode("123456"), "An", "Lee1", "123-456", new ArrayList<>(), Role.ROLE_USER);
+        User user2 = new User("an2lee2@email.com", passwordEncoder.encode("123456"),"Bn", "Lee2", "456-234", new ArrayList<>(), Role.ROLE_COOK);
+        User user3 = new User("an3lee3@email.com", passwordEncoder.encode("123456"),"Cn", "Lee3", "678-890", new ArrayList<>(), Role.ROLE_USER);
+        User user4 = new User("an4lee4@email.com", passwordEncoder.encode("123456"),"Dn", "Lee4", "345-567", new ArrayList<>(), Role.ROLE_USER);
+        User user5 = new User("an5lee5@email.com", passwordEncoder.encode("123456"),"En", "Lee5", "234-890", new ArrayList<>(), Role.ROLE_USER);
+        User user6 = new User("an6lee6@email.com", passwordEncoder.encode("123456"),"Fn", "Lee6", "764-678", new ArrayList<>(), Role.ROLE_USER);
         userList.add(adminUser);
         userList.add(user);
         userList.add(user1);
