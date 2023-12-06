@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 import spring.io.restaurantmanagement.common.BaseEntity;
 
 import javax.persistence.Entity;
@@ -25,8 +26,10 @@ public class Reservation extends BaseEntity {
     
     private String phoneNumber;
     
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime time;
     
     private int guestNumber;
